@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario AMAAD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/imagens/amaad.png">
+
+    <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+  />
+  <link rel="stylesheet" href="/static/css/navbar.css" />
+<link rel="stylesheet" href="/static/css/carrossel.css">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+  rel="stylesheet"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+
+
+
+
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/calendario.css" />
+
+  </head>
+  <body>
+
+<!------------------------------------ navbar---------------------------------- -->
+    <nav class="navbar">
+        <img
+          onclick="document.body.classList.toggle('open')"
+          class="burger"
+          src="/static/imagens/menu.svg"
+          alt="menu"
+        />
+        <img src="/static/imagens/amaad.png" alt="imagem da associação"/>
+        <div class="menu-items">
+         
+            
+            
+          
+          <div class="menu menu-left">
+            <a href="/templates/homePage.html">Home</a>
+            <a href="/templates/avisos.html">Avisos</a>
+            <a href="#">Membros</a>
+            <a href="/templates/calendario.html" style="color: #455eca;">Calendarios</a>
+            <a href="#">Transparencia</a>
+ 
+          </div>
+          
+          <p id="nomeAssociacao">Associação dos Moradores e Amigos de Ana Dias</p>
+          <p id="nomeAbreviado">AMAAD</p>
+        </div>
+        <div class="menu menu-right">
+          
+          
+          <i class="fas fa-user " ></i>
+          <span class="textoLogin">Login</span>
+        </div>
+    </nav>
+
+<!---------------------------------- navbar ou menu de cima ---------------------------------- -->
+
+
+<div class="cards">
+    <label id="summary">
+      <input type="checkbox" />
+      <article>
+        <div class="front">
+          <header>
+            <h2>Domingo</h2>
+            <span class="material-symbols-outlined"> + detalhes </span>
+          </header>
+          <var>21</var>
+          <h3>Outubro</h3>
+          <h4>Reunião ordinaria</h4>
+        </div>
+        <div class="back">
+          <header>
+            <h2>Reunião ordinaria</h2>
+            <span class="material-symbols-outlined"> fechar </span>
+          </header>
+          <p>reunião para tratar de coisas coisadas <br>
+          as 19:00 horas <br>
+            no bar</p>
+        </div>
+      </article>
+    </label>
+    <label id="summary">
+      <input type="checkbox" />
+      <article>
+        <div class="front">
+          <header>
+            <h2>Domingo</h2>
+            <span class="material-symbols-outlined"> + detalhes </span>
+          </header>
+          <var>28</var>
+          <h3>Outubro</h3>
+          <h4>Reunião </h4>
+        </div>
+        <div class="back">
+          <header>
+            <h2>Reunião ordinaria</h2>
+            <span class="material-symbols-outlined"> fechar </span>
+          </header>
+          <p>reunião para tratar de coisas coisadas <br>
+          as 19:00 horas <br>
+            no bar</p>
+        </div>
+      </article>
+    </label>
+    <label id="summary">
+      <input type="checkbox" />
+      <article>
+        <div class="front">
+          <header>
+            <h2>sexta-feira</h2>
+            <span class="material-symbols-outlined"> + detalhes </span>
+          </header>
+          <var>6</var>
+          <h3>Novembro</h3>
+          <h4>Reunião ordinaria</h4>
+        </div>
+        <div class="back">
+          <header>
+            <h2>Reunião ordinaria</h2>
+            <span class="material-symbols-outlined"> fechar </span>
+          </header>
+          <p>reunião para tratar de coisas coisadas <br>
+          as 19:00 horas <br>
+            no bar</p>
+        </div>
+      </article>
+    </label>
+    <label id="overdue">
+      <input type="checkbox" />
+      <article>
+        <div class="front">
+          <header>
+            <h2>Sabado</h2>
+            <span class="material-symbols-outlined"> + Detalhes </span>
+          </header>
+          <var>17</var>
+          <h3>Novembro</h3>
+          <h4>festa</h4>
+        </div>
+        <div class="back">
+          <header>
+            <h2>festa</h2>
+            <span class="material-symbols-outlined"> fechar </span>
+          </header>
+          <p>Festa em prol da bagunça</p>
+        </div>
+      </article>
+    </label>
+    <label id="features">
+      <input type="checkbox" />
+      <article>
+        <div class="front">
+          <header>
+            <h2>Quinta-Feira</h2>
+            <span class="material-symbols-outlined"> + Detalhes </span>
+          </header>
+          <var>25</var>
+          <h3>Dezembro</h3>
+          <h4>Natal</h4>
+        </div>
+        <div class="back">
+          <header>
+            <h2>Natal</h2>
+            <span class="material-symbols-outlined"> fechar </span>
+          </header>
+          <p>Festa de natal</p>
+        </div>
+      </article>
+    </label>
+  </div>
+
+
+<!------------------------------------ rodapé ---------------------------------------------------------------------->
+    
+
+
+<section id="footer">
+    <footer class="top">
+      <img src="/static/imagens/amaad.png" alt="" />
+      <div class="links">
+        <div class="links-column">
+          <h2>Paginas</h2>
+          <a href="/templates/homePage.html">Home</a>
+          <a>Avisos</a>
+          <a>Membros</a>
+          <a href="/templates/calendario.html" style="color: #455eca;">Calendario</a>
+          <a>Transparencia</a>
+         
+        </div>
+        <div class="links-column">
+          <h2>Licenças e documentos</h2>
+          <a>Licença</a>
+          <a>Alvará</a>
+          
+          <a>telefones</a>
+          
+        </div>
+        <div class="links-column socials-column">
+          <h2>Redes Sociais</h2>
+          <p>
+            Nos sigam nas redes sociais e acompanhem nossos trabalhos.
+          </p>
+          <div class="socials">
+            <a class="fa-brands fa-facebook"></a>
+            <a class="fa-brands fa-instagram"></a>
+            <a class="fa-brands fa-whatsapp"></a>
+
+            
+          </div>
+        </div>
+      </div>
+    </footer>
+    <footer class="bottom">
+      <p class="copyright">© 2023 Todos os Direitos Reservados</p>
+      <div class="legal">
+        desenvolvido por <a> Igor Keven </a>
+       
+      </div>
+    </footer>
+  </section>
+
+
+
+
+    <!-------------------------------------------- rodapé ---------------------------------- -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="/static/javascript/carrosel.js"></script>
+   
+  
+    
+    
+  
+  
+  </body>
+</html>

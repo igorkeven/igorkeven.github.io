@@ -1,0 +1,342 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body,
+  .wrapper {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    background: #161b22;
+    font-family: "Euclid Circular A", "Poppins";
+    color: #d6dfed;
+  }
+  
+ 
+  
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    height: 80px;
+    padding: 0 20px;
+    background: #161b22;
+  }
+  
+  nav img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  
+  .menu {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .menu-items p  {
+    margin-left: 0%;
+  }
+
+  .menu-items   {
+    align-items: inherit;
+    display: flex;
+    gap: 16px;
+
+    width: 90%;
+    
+    
+  }
+  
+  .menu-right {
+    position: relative;
+    margin-left: auto;
+   
+  }
+  
+  .menu-right i {
+    padding: 5px;
+    cursor: pointer;
+    
+  }
+  
+  
+  
+
+  .menu-right {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu-right .textoLogin {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    position: absolute;
+    z-index: 1;
+    top: 125%; 
+    left: 50%;
+    margin-left: -110px;
+  
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .menu-right:hover .textoLogin {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+
+  a,
+  a:is(:visited, :active) {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 24px;
+  }
+
+  a:hover{
+    color: #455eca;
+    text-decoration: none;
+   
+    cursor: pointer;
+    
+
+  }
+
+  #nomeAbreviado {
+    display: none;
+  }
+  
+  @media (max-width: 880px) {
+    #nomeAssociacao {
+      display: none; 
+    }
+  
+    #nomeAbreviado {
+      display: block;
+    }
+  }
+  
+  @media (width <= 580px) {
+    .menu-right img:nth-child(n + 3) {
+      display: none;
+    }
+  
+    .menu-items {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      gap: 16px;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      padding: 0 20px 20px;
+      background: #161b22;
+      z-index: 2;
+    }
+  
+    .menu-left {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .menu-left a {
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 10px;
+    }
+  
+    .menu-right {
+      margin-left: 0;
+    }
+  
+    .burger {
+      display: block;
+    }
+  }
+  
+  body.open .menu-items {
+    display: flex;
+    position: absolute;
+    
+  }
+
+
+
+
+  /*  -------------- rodapé ----------------------------- */
+ section#footer {
+  
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #29277a;
+    padding-top: 20px;
+    
+  }
+  
+  footer.top > img {
+    height: 50px;
+    margin: 0 auto 50px;
+  }
+  
+  footer {
+    position: relative;
+    margin: 0 10px;
+    color: rgb(255 255 255 / 50%);
+  }
+  
+  footer.top {
+    display: grid;
+    border-bottom: 2px solid rgb(255 255 255 / 20%);
+    padding-bottom: 25px;
+  }
+  
+  footer.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    gap: 8px;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer.top .links {
+    display: flex;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 80px;
+    margin-bottom: 10px;
+  }
+  
+  .links-column {
+    display: grid;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  footer h2 {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgb(255 255 255 / 96%);
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  .legal > a {
+    margin: 0 0 0 4px;
+  }
+  
+  .legal,
+  .copyright {
+    font-size: 12px;
+  }
+  
+  .legal > span {
+    margin-right: 10px;
+  }
+  
+  footer.top .socials {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    translate: -50% 0;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    height: 56px;
+  }
+  
+  footer.top .socials > a {
+    font-size: 24px;
+  }
+  
+  .socials-column :is(h2, p) {
+    display: none;
+  }
+  
+  @media (width > 400px) {
+    section#footer{
+      bottom: 0;
+      margin-bottom: 0%;
+    }
+
+    
+    .links-column {
+      text-align: left;
+    }
+  
+    footer.top .links {
+      grid-template-columns: repeat(2, 1fr);
+      margin-right: 50px;
+    }
+  
+    footer.bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 20px;
+      text-align: left;
+    }
+  
+    footer.top .socials {
+      right: 0;
+      top: 0;
+      translate: 0;
+    }
+  
+    footer.top > img {
+      margin: 0 0 50px;
+    }
+  }
+  
+  @media (width >= 640px) {
+
+
+
+    footer {
+      margin: 0 auto;
+      max-width: 580px;
+      padding: 0;
+    }
+  
+    footer.top .links {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    footer.top .socials {
+      position: static;
+    }
+  
+    footer.bottom {
+      justify-content: flex-start;
+    }
+  
+    .socials-column :is(h2, p) {
+      display: block;
+    }
+  }
+  /*  ------------ rodapé -------------------------------------------------- */

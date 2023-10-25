@@ -1,0 +1,102 @@
+
+
+@import url(/static/css/navbar.css);
+
+
+.avisos {
+    margin: 10vh;
+    margin-bottom: 20vh;
+    padding: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    font-family: "Euclid Circular A", "Poppins";
+    
+    position: relative;
+}
+.card {
+  display: block;
+  place-items: center;
+  gap: 10px;
+  order: 2;
+  width: 300px;
+  margin: 10px auto;
+  border-radius: 6px;
+  padding: 50px;
+  background: #ce0a0a;
+  font-size: 125%;
+}
+
+.card.primary {
+  order: 1;
+}
+
+.card.primary var {
+  font-size: 60px;
+}
+
+
+
+@media (width >= 960px) {
+  
+
+  body,
+  html {
+    height: 100%;
+  }
+
+
+
+ 
+
+  .card {
+    display: block;
+    place-items: center;
+    gap: 10px;
+   
+    width: 300px;
+    margin: 0px auto;
+    border-radius: 6px;
+    padding: 50px;
+    background: #ce0a0a;
+    font-size: 125%;
+  }
+
+  .card.primary {
+    order: 2;
+  }
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+.card var {
+  color: #0f71ff;
+  font-weight: bold;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.card var small {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+ul li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+}
+
+ul li img {
+  width: 16px;
+}
+
