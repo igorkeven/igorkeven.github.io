@@ -4,11 +4,11 @@
 
 
 .avisos {
-    margin: 10vh;
+    margin: 2vh;
     margin-bottom: 20vh;
     padding: 10vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     font-family: "Euclid Circular A", "Poppins";
     
