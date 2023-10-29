@@ -61,7 +61,7 @@ var swiper = new Swiper(".swiper", {
     },
   });
 
-
+  
   window.addEventListener("resize", function () {
     swiper.params.coverflowEffect.modifier = window.innerWidth < 580 ? 2 : 5;
     swiper.update();
