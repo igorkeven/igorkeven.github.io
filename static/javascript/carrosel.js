@@ -16,13 +16,11 @@ function loadImagesFromJSON() {
           const divh2 = document.createElement('div');
           const h2 = document.createElement('h2');
           h2.textContent = 'Festa do dia das crianças';
-          const a = document.createElement('a');
-          a.classList.add('image-link');
-          a.textContent = 'Explore';
+          
           
           
           divh2.appendChild(h2);
-          divh2.appendChild(a);
+          
           slide.appendChild(divh2);
           swiperWrapper.appendChild(slide);
          
@@ -53,7 +51,7 @@ var swiper = new Swiper(".swiper", {
       rotate: 10,
       stretch: 0,
       depth: 150,
-      modifier: 5,
+      modifier: window.innerWidth < 580 ? 1 : 5,
       slideShadows: true,
     },
     loop: true,
@@ -61,6 +59,12 @@ var swiper = new Swiper(".swiper", {
       el: ".swiper-pagination",
       clickable: false,
     },
+  });
+
+
+  window.addEventListener("resize", function () {
+    swiper.params.coverflowEffect.modifier = window.innerWidth < 580 ? 1 : 5;
+    swiper.update();
   });
 
 });
