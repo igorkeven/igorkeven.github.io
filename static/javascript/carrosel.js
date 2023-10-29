@@ -51,7 +51,7 @@ var swiper = new Swiper(".swiper", {
       rotate: 10,
       stretch: 0,
       depth: 150,
-      modifier: window.innerWidth < 580 ? 1 : 5,
+      modifier: window.innerWidth < 580 ? 2 : 5,
       slideShadows: true,
     },
     loop: true,
@@ -63,7 +63,7 @@ var swiper = new Swiper(".swiper", {
 
 
   window.addEventListener("resize", function () {
-    swiper.params.coverflowEffect.modifier = window.innerWidth < 580 ? 1 : 5;
+    swiper.params.coverflowEffect.modifier = window.innerWidth < 580 ? 2 : 5;
     swiper.update();
   });
 
