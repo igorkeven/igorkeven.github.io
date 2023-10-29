@@ -4,12 +4,13 @@
 
 
 .avisos {
-    margin: 2vh;
+    
     margin-bottom: 20vh;
+    margin-left: 2vh;
     padding: 10vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 10px;
     font-family: "Euclid Circular A", "Poppins";
     
     position: relative;
@@ -56,6 +57,7 @@
    
     width: 300px;
     margin: 0px auto;
+    margin-left: 2vh;
     border-radius: 6px;
     padding: 50px;
     background: #ce0a0a;

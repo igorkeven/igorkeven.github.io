@@ -11,10 +11,11 @@ body {
 .cards {
     margin: 10vh;
     margin-bottom: 20vh;
+    margin-left: 2vh;
     padding: 10vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    gap: 10px;
     background: #161b22;
     color: #1e293b;
     font-family: "Euclid Circular A", "Poppins";
