@@ -90,15 +90,66 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="mes" data-mes="Janeiro">
-        <td>Janeiro</td>
-        <td>R$ 10.000,00</td>
-      </tr>
-      <tr class="mes" data-mes="Fevereiro">
-        <td>Fevereiro</td>
-        <td>R$ 12.000,00</td>
-      </tr>
-      <!-- Adicione mais meses e gastos aqui -->
+        <tr class="mes" data-mes="Janeiro">
+            <td>Janeiro</td>
+            <td>R$ 10.000,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Fevereiro">
+            <td>Fevereiro</td>
+            <td>R$ 12.000,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Março">
+            <td>Março</td>
+            <td>R$ 11.500,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Abril">
+            <td>Abril</td>
+            <td>R$ 13.200,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Maio">
+            <td>Maio</td>
+            <td>R$ 12.800,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Junho">
+            <td>Junho</td>
+            <td>R$ 12.700,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Julho">
+            <td>Julho</td>
+            <td>R$ 11.900,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Agosto">
+            <td>Agosto</td>
+            <td>R$ 11.300,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Setembro">
+            <td>Setembro</td>
+            <td>R$ 11.700,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Outubro">
+            <td>Outubro</td>
+            <td>R$ 12.500,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Novembro">
+            <td>Novembro</td>
+            <td>R$ 13.000,00</td>
+          </tr>
+          
+          <tr class="mes" data-mes="Dezembro">
+            <td>Dezembro</td>
+            <td>R$ 13.800,00</td>
+          </tr>
+          
     </tbody>
   </table>
   <div id="detalhes" >
@@ -185,27 +236,91 @@ meses.forEach((mes) => {
 
       // Exibe os detalhes
       detalhes.style.display = 'block';
+      detalhes.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
 // Função de exemplo para obter os detalhes dos gastos
 function obterGastosDetalhados(mes) {
-  // Substitua esta função com sua lógica para obter os detalhes dos gastos
-  if (mes === 'Janeiro') {
-    return {
-      item1: 'Descrição do Gasto 1 para Janeiro',
-      item2: 'Descrição do Gasto 2 para Janeiro',
-    };
-  } else if (mes === 'Fevereiro') {
-    return {
-      item1: 'Descrição do Gasto 1 para Fevereiro',
-      item2: 'Descrição do Gasto 2 para Fevereiro',
-    };
-  } else {
-    return null;
+  switch (mes) {
+    case 'Janeiro':
+      return {
+        item1: 'Descrição do Gasto 1 para Janeiro',
+        item2: 'Descrição do Gasto 2 para Janeiro',
+      };
+
+    case 'Fevereiro':
+      return {
+        item1: 'Descrição do Gasto 1 para Fevereiro',
+        item2: 'Descrição do Gasto 2 para Fevereiro',
+      };
+
+    case 'Março':
+      return {
+        item1: 'Descrição do Gasto 1 para Março',
+        item2: 'Descrição do Gasto 2 para Março',
+      };
+
+    case 'Abril':
+      return {
+        item1: 'Descrição do Gasto 1 para Abril',
+        item2: 'Descrição do Gasto 2 para Abril',
+      };
+
+    case 'Maio':
+      return {
+        item1: 'Descrição do Gasto 1 para Maio',
+        item2: 'Descrição do Gasto 2 para Maio',
+      };
+
+    case 'Junho':
+      return {
+        item1: 'Descrição do Gasto 1 para Junho',
+        item2: 'Descrição do Gasto 2 para Junho',
+      };
+
+    case 'Julho':
+      return {
+        item1: 'Descrição do Gasto 1 para Julho',
+        item2: 'Descrição do Gasto 2 para Julho',
+      };
+
+    case 'Agosto':
+      return {
+        item1: 'Descrição do Gasto 1 para Agosto',
+        item2: 'Descrição do Gasto 2 para Agosto',
+      };
+
+    case 'Setembro':
+      return {
+        item1: 'Descrição do Gasto 1 para Setembro',
+        item2: 'Descrição do Gasto 2 para Setembro',
+      };
+
+    case 'Outubro':
+      return {
+        item1: 'Descrição do Gasto 1 para Outubro',
+        item2: 'Descrição do Gasto 2 para Outubro',
+      };
+
+    case 'Novembro':
+      return {
+        item1: 'Descrição do Gasto 1 para Novembro',
+        item2: 'Descrição do Gasto 2 para Novembro',
+      };
+
+    case 'Dezembro':
+      return {
+        item1: 'Descrição do Gasto 1 para Dezembro',
+        item2: 'Descrição do Gasto 2 para Dezembro',
+      };
+
+    default:
+      return null;
   }
 }
+
 
    </script>
   
