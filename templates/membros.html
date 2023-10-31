@@ -229,10 +229,19 @@ window.onscroll = function() {
 };
 
 
+
+
+
+if (window.innerWidth < 680){
 btnVoltarAoTopo.addEventListener('click', function() {
-    btnMembros.style.display = "block";
+    voltarAoTopo();
 } )
 
+}else{
+ btnVoltarAoTopo.addEventListener('click', function() {
+    btnMembros.style.display = "block";
+} )
+}
 
   </script>
     
