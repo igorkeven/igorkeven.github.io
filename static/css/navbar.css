@@ -50,6 +50,21 @@ button {
   gap: 12px;
   width: 120px;
 }
+@media (width < 400px){
+.navbar-logo-icon{
+  display: none;
+}
+
+.banner header{
+  margin-top: 10%;
+}
+
+.images > img {
+  width: 30%;
+
+}
+
+}
 
 .navbar-logo-icon {
   height: 28px;
@@ -81,7 +96,7 @@ button {
   .navbar-menu {
     flex: 1 1 auto;
     justify-content: center;
-    margin-right: 120px;
+    margin-right: 20px;
   }
 }
 
@@ -168,8 +183,8 @@ margin-left: 150px;
  div.corFundo {
   margin-left: 0px;
  }
-  .navbar-menu {
-  margin-right: 40px;
+.navbar-menu {
+  margin-right: 30px;
 }
 
 
