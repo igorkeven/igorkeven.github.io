@@ -23,14 +23,16 @@ function mudarTema(e) {
     var body = document.querySelector('body');
       var navbar = document.querySelector('.navbar');
       const input = document.getElementById('switch-round');
-      console.log(e);
+      
       if (e == '0') {
-        body.classList.remove('on');
-        navbar.classList.remove('on');
+        body.style.background = "#77797e";
+        navbar.style.background = "#3b3d43";
+        navbar.style.color = "#f9f9f9";
         input.value = '1'
       } else {
-        body.classList.add('on');
-        navbar.classList.add('on');
+        body.style.background = ' #ccccd4';
+        navbar.style.background = "#ccccd4";
+        navbar.style.color = "black";
         input.value = '0'
       }
     
