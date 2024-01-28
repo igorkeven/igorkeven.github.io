@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igor Keven</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/static/imagens/logo-icon.png">
+    <!-- links para o menu -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,122 +12,150 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-    <link href="/static/css/navbar.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/static/css/corpo.css">
-  </head>
-  <body>
-    <nav class="navbar">
-      <h1 class="navbar-logo">
-        <img class="navbar-logo-icon" src="/static/imagens/logo-icon.png" />
-        <img class="navbar-logo-text" src="/static/imagens/logo-text.png" />
-      </h1>
-      <nav class="navbar-menu">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!--  -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <nav id="navNormal">
+        <img alt="" src="/static/imagens/logo-icon.png" />
+
+        <div id="menuNormal">
+          <a href="#" > Home </a>
+          <a  id="login_btn"> E-Mail </a>
+          <a  id="contact-button"> Redes 
+           
+          </a>
+        
+          <div id="social-icons">
+            <div id="icon-container">
+                <a href="Https://www.instagram.com/kevenigor" target="_blank" class="uil uil-instagram icon" >Instagram</a>
+                <a href="https://wa.me/5513997273701" target="_blank" class="uil uil-whatsapp icon">WhatsApp</a>
+                <a href="https://www.linkedin.com/in/igor-keven" target="_blank" class="uil uil-linkedin icon">Linkedin</a>
+                <a href="https://github.com/igorkeven" target="_blank" class="uil uil-github-alt icon">GitHub</a>
+                <a href="https://www.youtube.com/igorkeven" target="_blank" class="uil uil-youtube icon">Youtube</a>
+            </div>
+        </div>
+
+        
+
+        </div>
+        
+        <div id="menuHamburger">
+        <button   class="burger" onclick="toggleMenu()"> </button>
+    <div class="background"></div>
+    <div class="menu">
+      <nav>
+
+        <div id="pag1">
+          <a href="#" id="home"> Home </a>
+          <a  id="login_btn2"> E-Mail </a>
+          <a href="#" id="btnContCel"> Redes </a>    
+        </div>
 
 
+        <div id="pag2">
 
-        <button type="button" id="navbar-instagram" class="uil uil-instagram" onclick="window.open('https://www.instagram.com/kevenigor', '_blank');"></button>
-        <button type="button" id="navbar-github" class="uil uil-github-alt" onclick="window.open('https://github.com/igorkeven', '_blank');"></button>
-        <button type="button" id="navbar-youtube" class="uil uil-youtube" onclick="window.open('https://www.youtube.com/igorkeven', '_blank');"></button>
-        <button type="button" id="navbar-linkedin" class="uil uil-linkedin" onclick="window.open('https://www.linkedin.com/in/igor-keven', '_blank');"></button>
+          <br><br>
+          <a href="Https://www.instagram.com/kevenigor" target="_blank" class="uil uil-instagram icon">Instagram</a><br><br>
+          <a href="https://wa.me/5513997273701" target="_blank" class="uil uil-whatsapp icon">WhatsApp</a><br><br>
+          <a href="https://www.linkedin.com/in/igor-keven" target="_blank" class="uil uil-linkedin icon">Linkedin</a><br><br>
+          <a href="https://github.com/igorkeven" target="_blank" class="uil uil-github-alt icon">GitHub</a><br><br>
+          <a href="https://www.youtube.com/igorkeven" target="_blank" class="uil uil-youtube icon">Youtube</a>
+    <br><br><br><br>
+          <a href="#" id="btnVoltar">Voltar</a>
+  </div>
+        
+        </nav>
+    </div>
+        
 
+  
+        </div>
 
-        <div class="corFundo">
-            
-            <span class="switch">
-              <input id="switch-round" type="checkbox" value="1"  onclick="mudarTema(value)"/>
-              <label for="switch-round"></label>
-            </span>
-          </div>
-      </nav>
+        <div id="nomenav">
+          <div class="nomenaveduarda"> Igor Keven </div>
+          <div class="nomenavfotografia">Desenvolvedor</div>
+        </div>
     </nav>
+    <section class="banner" id="banner">
+        <div class="banner-content">
 
-
-    <section class="banner">
-        <header>
-          <div class="nomeIgor">
-            <h2>Igor Keven</h2>
-            <h3>Backend Developer</h3>
-          </div>
-          <img src="/static/imagens/igor2.jpg" />
-        </header>
-        <div class="images">
-          <img height="874" src="/static/imagens/1.jpg" width="1240" />
-          <img height="874" src="/static/imagens/2.jpg" width="1240" />
-          <img height="874" src="/static/imagens/3.jpg" width="1240" />
-          <img height="874" src="/static/imagens/1.jpg" width="1240" />
+             <h2>Olá,Sou Igor Keven</h2>
+            <h3>Desenvolvedor de software</h3>
         </div>
     </section>
+    <div id="container" class="container">
+        <!-- As seções vão aqui -->
+         <section class="descricao panel blue">
+          <div class="banner-content">
+            <h2>HTML</h2>
+            <h3>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+              labore eius cum perferendis consectetur culpa laboriosam quam, sed
+              ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+              deleniti eaque sed.
+            </h3>
   
-      <main>
-        <h2>Introdução</h2>
-        <p>
-            Busco uma posição na área de desenvolvimento de software, utilizando minhas habilidades em Python,
-            Flask, MySQL, Flutter, JavaScript, HTML e CSS. Tenho conhecimentos em gerenciamento de bancos de
-            dados e desenvolvimento de aplicativos móveis. Meu objetivo é aplicar minha forte capacidade de
-            resolução de problemas, habilidades analíticas, excelente habilidade de comunicação e aptidão para o
-            trabalho em equipe em um ambiente desafiador e colaborativo.        </p>
+          </div>
+        </section>
+        <section class="panel red">
+          <video autoplay muted loop class="myVideo">
+            <source src="/static/imagens/site-gabriel.mkv" type="video/mp4">
+          </video>
+<div class="banner-content3">
+  <h2>Youtuber, Jogador de Age of Mythologi</h2>
+  <h3>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+    labore eius cum perferendis consectetur culpa laboriosam quam, sed
+    ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+    deleniti eaque sed.
+  </h3>
 
-        <h2>Formação Acadêmica e Idiomas</h2>
-        <p>
-Bacharel em Tecnologia da Informação - Universidade Virtual do Estado de São Paulo (Previsão de
-conclusão em 2024) <br>
-Inglês – Intermediário <br>
-Espanhol - Intermediário        </p>
+</div>
+        </section>
+        <section class="description2 panel blue">
+          <video autoplay muted loop class="myVideo">
+            <source src="/static/imagens/site-fotografia.mkv" type="video/mp4">
+          </video>
+<div class="banner-content3">
+  <h2>Site criado para uma fotógrafa</h2>
+  <h3>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+    labore eius cum perferendis consectetur culpa laboriosam quam, sed
+    ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+    deleniti eaque sed.
+  </h3>
 
-        <h2>Projetos</h2>
-        <h4>Serviço de Comunicação da Secretaria de Educação de Itariri-SP:</h4>
-        <p>
-            Serviço desenvolvido para facilitar a comunicação entre a secretaria, professores e alunos da Secretaria
-            de Educação de Itariri-SP
-        </p>
-<h4>Tecnologias:</h4>
-<p>Aplicativo web: Python, Flask, SQL (MySQL), JSON, CSS, HTML <br>
-    Aplicativo mobile: Dart, Flutter</p>
-
-    <h4>kevenaom.com:</h4>
-<p>Site desenvolvido para gerenciamento de comunidade de um Youtuber. O site possui funcionalidades de
-    CRUD, incluindo cadastro de usuário, login, uploads de arquivos, downloads e um fórum para interação
-    dos usuários.</p>
-    <h4>Tecnologias:</h4>
-    <p>Python (Flask), SQL (MySQL), JSON, Javascript, CSS, HTML <br>
-    Link: <a href="http://kevenaom.com" target="_blank" rel="noopener noreferrer">KevenAOM.com</a></p>
-
-        <h4>Aplicativo Mobile de Gerenciamento de Vendas:</h4>
-        <p>
-            Aplicativo mobile desenvolvido para gerenciamento de dados de uma empresa de venda de frutas. O
-            aplicativo permite que o usuário registre o preço e a quantidade das frutas, aprove cadastros de clientes
-            e acompanhe os pedidos. Os clientes podem fazer um pré-cadastro e, assim que aprovado pela
-            empresa, podem fazer login e enviar pedidos.
-        </p>
-        <h4>Tecnologias:</h4>
-        <p>Flutter, MySQL, Python</p>
-
-        <h4>Canal no Youtube:</h4>
-        <p>Canal criado para compartilhar meu conhecimento em Programação, utilizando HTML, CSS, NodeJS,
-            Python e Flask <br>
-            Link: <a href="https://www.youtube.com/igorkeven" target="_blank" rel="noopener noreferrer">Programador Aprendiz</a></p>
-
-
-      </main>
-  
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
-        integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"
-        integrity="sha512-A64Nik4Ql7/W/PJk2RNOmVyC/Chobn5TY08CiKEX50Sdw+33WTOpPJ/63bfWPl0hxiRv1trPs5prKO8CpA7VNQ=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script src="/static/javascript/corpo.js"></script>
-
-
-
+</div>
+        </section>
+        <section class="panel red">
+          <img alt="" src="/static/imagens/react.png" />
+          <h2>React JS</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            labore eius cum perferendis consectetur culpa laboriosam quam, sed
+            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+            deleniti eaque sed.
+          </p>
+        </section>
+      </div>
+     
+    </div>
+    <section class="footer" id="footer-section">
+        <h2>E-Mail</h2>
+        <form action="/login" id="login" method="POST" >
+            <input type="text" id="nome" name="nome" placeholder="Digite seu E-Mail" />
+            <input type="text" name="senha" id="senha" placeholder="Digite o e-mail">
+            
+            <button type="submit" id="btn_entrar" >Enviar</button>
+        </form>
+    </section>
+    <script src="/static/javaScript/index.js"></script>
 </body>
 </html>
