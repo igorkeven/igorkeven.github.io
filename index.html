@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igor Keven</title>
+
+
+
+
     <!-- links para o menu -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -94,70 +98,103 @@
         <!-- As seções vão aqui -->
          <section class="descricao panel blue">
           <div class="banner-content">
-            <h2>Igor Keven</h2>
+            <h2>HTML</h2>
             <h3>
-              Busco uma posição na área de desenvolvimento de software, utilizando minhas habilidades em Python,
-            Flask, MySQL, Flutter, JavaScript, HTML e CSS. Tenho conhecimentos em gerenciamento de bancos de
-            dados e desenvolvimento de aplicativos móveis. Meu objetivo é aplicar minha forte capacidade de
-            resolução de problemas, habilidades analíticas, excelente habilidade de comunicação e aptidão para o
-            trabalho em equipe em um ambiente desafiador e colaborativo. 
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+              labore eius cum perferendis consectetur culpa laboriosam quam, sed
+              ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+              deleniti eaque sed.
             </h3>
   
           </div>
         </section>
         <section class="panel red">
           <video autoplay muted loop class="myVideo">
-            <source src="/static/imagens/site-gabriel.mp4" type="video/mp4">
+            <source src="/static/imagens/site-gabriel.mkv" type="video/mp4">
           </video>
 <div class="banner-content3">
   <h2>Youtuber, Jogador de Age of Mythologi</h2>
   <h3>
-    Site desenvolvido para gerenciamento de comunidade de um Youtuber. O site possui funcionalidades de
-    CRUD, incluindo cadastro de usuário, login, uploads de arquivos, downloads e um fórum para interação
-    dos usuários.
-    <h4>Tecnologias:</h4>
-    Python (Flask), SQL (MySQL), JSON, Javascript, CSS, HTML <br>
-    Link: <a href="http://kevenaom.com" target="_blank" rel="noopener noreferrer">KevenAOM.com</a>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+    labore eius cum perferendis consectetur culpa laboriosam quam, sed
+    ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+    deleniti eaque sed.
   </h3>
 
 </div>
         </section>
         <section class="description2 panel blue">
           <video autoplay muted loop class="myVideo">
-            <source src="/static/imagens/site-fotografia.mp4" type="video/mp4">
+            <source src="/static/imagens/site-fotografia.mkv" type="video/mp4">
           </video>
 <div class="banner-content3">
   <h2>Site criado para uma fotógrafa</h2>
   <h3>
-    Site criado para uma cliente fotógrafa onde a ideia era mostrar e entregar as fotos de uma forma segura,
-      fiz um sistema de login seguro onde ela vai cadastrar os cllientes e enviar as fotos do respectivos,
-      já o cliente vai ter acesso a apenas sua pagina podendo ver as fotos e fazer o download,
-      tannto unitario como de todos os arquivos em formato Zip. fiz um esquema de exclusão automatica do cliente assim passado 3 meses,
-      esquema esse sendo um dos pedidos da cliente.
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+    labore eius cum perferendis consectetur culpa laboriosam quam, sed
+    ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+    deleniti eaque sed.
   </h3>
 
 </div>
         </section>
         <section class="panel red">
           <img alt="" src="/static/imagens/react.png" />
-          <h2>Dispositivos Moveis</h2>
-          <h3>
-            Aqui temos alguns dos app's que desenvolvi utilizando o dart(FLUTTER)
-            
-          </h3>
+          <h2>React JS</h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            labore eius cum perferendis consectetur culpa laboriosam quam, sed
+            ea nihil, suscipit, quidem est expedita. Nihil enim obcaecati
+            deleniti eaque sed.
+          </p>
         </section>
       </div>
      
     </div>
     <section class="footer" id="footer-section">
         <h2>E-Mail</h2>
-        <form action="/login" id="login" method="POST" >
-            <input type="text" id="nome" name="nome" placeholder="Digite seu E-Mail" />
-            <input type="text" name="senha" id="senha" placeholder="Digite o e-mail">
-            
-            <button type="submit" id="btn_entrar" >Enviar</button>
-        </form>
+        <form id="contact-form">
+          
+          <label>Name</label>
+          <input type="text" name="user_name" id="user_name">
+          <label>Email</label>
+          <input type="email" id="user_email" name="user_email">
+          <label>Message</label>
+          <textarea name="message" id="message"></textarea>
+          <input type="submit" value="Send">
+      </form>
+    
     </section>
+   
+
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('wD57V7e6GaStPt2Yh');
+        })();
+    </script>
+    <script type="text/javascript">
+         document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var templateParams = {
+     
+to_name: document.getElementById('user_name').value,
+from_name: document.getElementById('user_email').value,
+message: document.getElementById('message').value,
+reply_to: "igorkeven@hotmail.com"
+    };
+    emailjs.send("service_k9igf3d","template_sgk4dwc", templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+        console.log('FAILED...', error);
+      });
+  });
+    </script>
+
     <script src="/static/javaScript/index.js"></script>
 </body>
 </html>
