@@ -255,7 +255,11 @@ document.getElementById('login_btn2').addEventListener('click', function() {
             
             var elements = document.getElementsByClassName('red');
             for (var i = 0; i < elements.length; i++) {
-                elements[i].style.flexDirection = 'row';
+                if (window.matchMedia("(max-width: 600px)").matches) {
+                    elements[i].style.flexDirection = 'column';
+                } else {
+                    elements[i].style.flexDirection = 'row';
+                }
             }
         })
         
@@ -268,7 +272,11 @@ document.getElementById('login_btn2').addEventListener('click', function() {
             
             var elements = document.getElementsByClassName('blue');
             for (var i = 0; i < elements.length; i++) {
-                elements[i].style.flexDirection = 'row';
+                 if (window.matchMedia("(max-width: 600px)").matches) {
+                    elements[i].style.flexDirection = 'column';
+                } else {
+                    elements[i].style.flexDirection = 'row';
+                }
             }
         })
 
@@ -283,9 +291,21 @@ document.getElementById('login_btn2').addEventListener('click', function() {
           buttonSomMusic.style.display = 'none';
           buttonMute.style.display = 'none';
 
-          divApp1.style.width = '25%';
-          divApp1.style.height = '80%';
-          video3.style.minHeight = '70%';
+
+
+
+          if (window.matchMedia("(max-width: 600px)").matches) {
+            divApp1.style.width = '100%';
+            divApp1.style.height = '80%';
+            video3.style.minHeight = '70%';
+        } else {
+            divApp1.style.width = '100%';
+           
+            video3.style.minHeight = '70%';
+        }
+
+
+         
       
           divApp1.style.display = 'block';
           divApp2.style.display = 'block';
@@ -311,10 +331,17 @@ document.getElementById('login_btn2').addEventListener('click', function() {
             document.getElementById('descricao4').style.display = 'none';
             document.getElementById('vermais4').style.display = 'block';
             document.getElementById('vermenos4').style.display = 'none';
-            divApp2.style.width = '25%';
-            divApp2.style.height = '80%';
-            video4.style.minHeight = '70%';
-        
+
+            if (window.matchMedia("(max-width: 600px)").matches) {
+                divApp1.style.width = '100%';
+                divApp1.style.height = '80%';
+                video3.style.minHeight = '70%';
+            } else {
+                divApp1.style.width = '100%';
+               
+                video3.style.minHeight = '70%';
+            }
+    
             divApp1.style.display = 'block';
             divApp2.style.display = 'block';
             divApp3.style.display = 'block';
@@ -325,14 +352,25 @@ document.getElementById('login_btn2').addEventListener('click', function() {
                   elements[i].style.flexDirection = 'colum';
               }
           })
+
+
+
+
+
           document.getElementById('vermenos5').addEventListener('click', function(){
             document.getElementById('descricao5').style.display = 'none';
             document.getElementById('vermais5').style.display = 'block';
             document.getElementById('vermenos5').style.display = 'none';
-            divApp3.style.width = '25%';
-            divApp3.style.height = '80%';
-            video5.style.minHeight = '70%';
-        
+            if (window.matchMedia("(max-width: 600px)").matches) {
+                divApp1.style.width = '100%';
+                divApp1.style.height = '80%';
+                video3.style.minHeight = '70%';
+            } else {
+                divApp1.style.width = '100%';
+               
+                video3.style.minHeight = '70%';
+            }
+            
             divApp1.style.display = 'block';
             divApp2.style.display = 'block';
             divApp3.style.display = 'block';
@@ -347,10 +385,16 @@ document.getElementById('login_btn2').addEventListener('click', function() {
             document.getElementById('descricao6').style.display = 'none';
             document.getElementById('vermais6').style.display = 'block';
             document.getElementById('vermenos6').style.display = 'none';
-            divApp4.style.width = '25%';
-            divApp4.style.height = '80%';
-            video6.style.minHeight = '70%';
-        
+            if (window.matchMedia("(max-width: 600px)").matches) {
+                divApp1.style.width = '100%';
+                divApp1.style.height = '80%';
+                video3.style.minHeight = '70%';
+            } else {
+                divApp1.style.width = '100%';
+               
+                video3.style.minHeight = '70%';
+            }
+            
             divApp1.style.display = 'block';
             divApp2.style.display = 'block';
             divApp3.style.display = 'block';
