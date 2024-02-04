@@ -576,6 +576,16 @@ z-index: 3;
 
 .panel {
   flex-direction: column;
+  
+  
+}
+
+.panel.red, .panel.blue {
+  padding: 0%;
+}
+
+.panel.red a ,.panel.blue a{
+  margin-top: -15%;
 }
 
 
