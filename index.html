@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Igor Keven</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+ 
+  <style>
+
+
+/* Variáveis de cores para o tema claro */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #282828;
+  --text-color: #000000;
+  --highlight-color: #007BFF;
+  --itens-color:  rgba(59, 0, 77, 0.808) ;
+
+   /* Variáveis de imagens de fundo */
+   --image-english-light1: url('/static/imagens/en_light_1.webp');
+      --image-english-light2: url('/static/imagens/en_light_2.webp');
+      --image-english-light3: url('/static/imagens/en_light_3.jpg');
+      --image-portuguese-light1: url('/static/imagens/pt_light_1.jpg');
+      --image-portuguese-light2: url('/static/imagens/pt_light_2.webp');
+      --image-portuguese-light3: url('/static/imagens/pt_light_3.jpg');
+      --image-english-dark1: url('/static/imagens/en_dark_1.webp');
+      --image-english-dark2: url('/static/imagens/en_dark_2.jpg');
+      --image-english-dark3: url('/static/imagens/en_dark_3.webp');
+      --image-portuguese-dark1: url('/static/imagens/pt_dark_1.webp');
+      --image-portuguese-dark2: url('/static/imagens/pt_dark_2.webp');
+      --image-portuguese-dark3: url('/static/imagens/pt_dark_3.webp');
+}
+
+/* Variáveis de cores para o tema escuro */
+.dark-theme {
+  --primary-color: #181818;
+  --secondary-color: #f0f0f0;
+  --text-color: #ffffff;
+  
+}
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      color: var(--text-color);
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 0;
+      z-index: -1;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Imagem flutuante à direita */
+    .floating-section {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 200px;
+      top: 20%;
+      z-index: 2;
+    }
+
+    .floating-bust {
+      width: 250px;
+      height: auto;
+      margin-left: 150px; /* Ajustado para dar mais espaço */
+      border-radius: 150px;
+      background: var(--itens-color);/* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+    }
+
+    /* Texto ao lado da imagem */
+    .floating-text {
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+    }
+
+    .floating-text h2 {
+      font-size: 2.5rem; /* Tamanho maior para "Hi, I'm Igor" */
+      margin: 0;
+      color: var(--secondary-color);
+    }
+
+    .floating-text h3 {
+      font-size: 1.5rem; /* Tamanho menor para "Backend Developer" */
+      margin: 0;
+      color: var(--primary-color);
+    }
+
+    .floating-text p {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+
+    .en {
+      display: none;
+    }
+
+    /* Animação de flutuação */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Barra de navegação */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.6); /* Fica levemente escura ao rolar a página */
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-icons a {
+      color: wheat;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .navbar-icons a:hover {
+      color: #282828; /* Cor de hover */
+    }
+
+    .scroll_down {
+      font-size: 30px;
+      margin-left: 50%;
+      animation: float 3s ease-in-out infinite;
+      color: var(--primary-color);
+      background: var(--itens-color); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+border-radius: 20px;
+padding: 5px;
+    }
+
+
+.scroll-text {
+    color: var(--primary-color);
+    font-weight: bold;
+
+}
+  
+
+    .modal {
+      display: none; /* Oculto por padrão */
+      position: fixed;
+      z-index: 1001; /* Um nível acima do conteúdo */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      padding: 30px;
+    }
+
+    .modal-content {
+      background-color: var(--primary-color);
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 50%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--primary-color);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--highlight-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.color-picker {
+  display: flex;
+  gap: 10px; /* Espaçamento entre as bolinhas */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Forma de círculo */
+  cursor: pointer;
+  border: 2px solid #000; /* Borda para destacar */
+}
+
+
+.bandeiara{
+  cursor: pointer;
+  
+}
+
+
+
+
+ 
+.animacao {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+
+}
+
+.slider2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide2 {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  
+  padding: 20px;
+  margin-top: -15%;
+  
+}
+
+.project-image {
+  max-width: 50%;
+  object-fit: contain;
+  
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  width: 50%;
+  padding-left: 20px;
+}
+.img-lang {
+  width: 10%;
+  
+}
+
+.project-description h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.project-description p {
+  font-size: 18px;
+  
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegação fixa -->
+  <div class="navbar">
+    <div class="navbar-icons">
+      <a href="https://www.instagram.com/kevenigor" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/igorkeven" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.youtube.com/igorkeven" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <!-- Bandeira do Brasil para tradução -->
+      <a class="toggle-en bandeiara" onclick="toggleLanguage()" style="display: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" style="width: 24px;">
+      </a>
+      <a class="toggle-pt bandeiara" onclick="toggleLanguage()" >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos EUA" style="width: 24px;">
+      </a>
+
+      <br><br><br>
+      <a href="javascript:void(0)" id="settingsIcon">
+        <i class="fas fa-cog"></i> <!-- Ícone de configuração -->
+      </a>
+    </div>
+  </div>
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+       <!-- Bandeira do Brasil para tradução -->
+
+        
+      
+
+
+      <h2 class="pt">Configurações</h2>
+      <h2 class="en" style="display: none;">settings</h2>
+<br>
+      <a class="toggle-en bandeiara" onclick="toggleLanguage()" style="display: none;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" alt="Bandeira do Brasil" style="width: 24px;"> mudar idioma para o português
+      </a>
+      <a class="toggle-pt bandeiara" onclick="toggleLanguage()" >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="Bandeira dos EUA" style="width: 24px;">
+        change the language to English
+      </a> 
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider"></div>
+        </label>
+        <span id="theme-label"> &emsp13; Mudar para Tema Escuro</span>
+      </div>
+<br>
+       <!-- Bolinhas de cores -->
+  <div class="color-picker">
+    <div class="color-circle" style="background-color: red;" onclick="changeColor('red')"></div>
+    <div class="color-circle" style="background-color: blue;" onclick="changeColor('blue')"></div>
+    <div class="color-circle" style="background-color: green;" onclick="changeColor('green')"></div>
+    <div class="color-circle" style="background-color: rgba(59, 0, 77, 0.808) ;" onclick="changeColor('rgba(59, 0, 77, 0.808) ')"></div>
+
+  </div>
+      
+      
+    </div>
+  </div>
+  <section>
+    <div class="bg" style="background-image: var(--image-portuguese-light1);"></div>
+   
+    <div class="animacao"> 
+    <!-- Seção flutuante com a imagem e o texto -->
+    <div class="floating-section ">
+      <div class="floating-text en">
+        <h2>Hi, I'm Igor Keven</h2>
+        <h3>Software Developer</h3>
+        <p>Full-Stack Developer with experience in various technologies and programming languages, including:</p>
+        <p>Python: Flask, Django, Selenium, Kivy, Pygame<br>
+        Dart: Flutter<br>
+        JavaScript: Node.js, Bootstrap, Express<br>
+        Java<br>
+        JSON<br>
+        HTML and CSS <br>
+        SQL: MySQL, SQLite<br>
+        Skilled in web development, process automation, mobile applications, and games, with a focus on building robust and efficient solutions tailored to project needs.</p>
+      </div>
+
+      <div>
+        <img src="/static/imagens/102704465.png" alt="Seu busto" class="floating-bust en">
+        <h3 class="scroll_down en">
+          <span class="scroll-text">Scroll down</span>
+          <i class="fas fa-arrow-down"></i>
+        </h3>
+      </div>
+    </div>
+
+    <div class="floating-section ">
+      <div class="floating-text pt">
+        <h2>Olá, sou o Igor Keven</h2>
+        <h3>Desenvolvedor de Software</h3>
+        <p>Desenvolvedor Full-Stack com experiência em diversas tecnologias e linguagens de programação, incluindo:</p>
+        <p>Python: Flask, Django, Selenium, Kivy, Pygame<br>
+        Dart: Flutter<br>
+        JavaScript: Node.js, Bootstrap, Express<br>
+        Java<br>
+        JSON<br>
+        HTML e CSS <br>
+        SQL: MySQL, SQLite<br>
+        Tenho habilidades em desenvolvimento web, automação de processos, aplicativos móveis e games, com foco em criar soluções robustas e eficientes, adaptadas às necessidades dos projetos.</p>
+      </div>
+
+      <div>
+        <img src="/static/imagens/102704465.png" alt="Seu busto" class="floating-bust pt">
+        <h3 class="scroll_down pt">
+          <span class="scroll-text">Role para baixo</span>
+          <i class="fas fa-arrow-down"></i>
+        </h3>
+      </div>
+    </div>
+
+
+  </div>
+  </section>
+  
+  <section >
+    <div class="bg" style="background-image: var(--image-portuguese-light2);"></div>
+    
+
+    <div class="animacao">
+
+    
+    <div class="slider-container">
+      <div class="slider2" id="slider2">
+        <!-- Slide 1 -->
+        <div class="slide2">
+          <img src="/static/imagens/canal-youtube.png" alt="Projeto 1" class="project-image">
+          <div class="project-description">
+            <img src="/static/imagens/lang/Youtube_logo.png" alt="linguagens" class="img-lang">
+            <h2>Canal no youtube</h2>
+            <p>Um dos meus maiores projetos foi ter criado um canal no youtube para ensinar um pouco de programação, ja se inscreve la para acompanhar. <br> <a href="http://youtube.com/igorkeven" target="_blank">Click aqui e confira.</a></p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide2">
+          <img src="/static/imagens/E-commerce.png" alt="Projeto 2" class="project-image">
+          <div class="project-description">
+            <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+
+            <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+            
+
+            <h2>E-commerce</h2>
+            <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+            <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
+            <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide2">
+          <video src="/static/imagens/rede-social.mp4" autoplay muted loop alt="Projeto 3" class="project-image" ></video>
+          
+          <div class="project-description">
+            <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/sql.png" alt="linguagens" class="img-lang">
+            <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+
+            <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+
+            <h2>Rede Social</h2>
+            <p>Desenvolvi essa rede social para ensinar no canal, contendo todas as funcionalidades, envio de texto, foto e video , um sistema de login seguro e simples, menssagens, amigos e muito mais... <br>
+            confirara aqui: <br> 
+            <a href="http://"target="_blank">Link para a playlist do canal</a> <br> <br>
+          <a href="http://"target="_blank">Link para o codigo no github</a></p>
+          </div>
+        </div>
+          <!-- Slide 4 -->
+          <div class="slide2">
+            
+            <video src="/static/imagens/app-rede-social.mp4" autoplay muted loop alt="Projeto 3" class="project-image" style="max-height: 50%; margin-top: -5%; max-width: 50%; width: 40%;  height: 50%;" ></video>
+            <div class="project-description">
+              <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/dart-icon-511x512-jhyea1ft.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/flutter-logo-5086DD11C5-seeklogo.com.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/sqlite-icon-2048x909-7nkrc3bm.png" alt="linguagens" class="img-lang">
+
+
+
+
+              <h2>Aplicativo para a Rede Social</h2>
+              <p> Desenvolvi esse aplicativo com Flutter para interagir com a rede social "Social Connect" que mostrei no slide anterior, tanto o site quanto o app funcionan em paralelo , podendo assim o usuario escolher qual melhor experiência deseja. <br>
+              confirara aqui: <br>  
+              
+            <a href="http://"target="_blank">Link para o codigo no github</a></p>
+            </div>
+          </div>
+           <!-- Slide 5 -->
+           <div class="slide2">
+            <video src="/static/imagens/app-music.mp4" autoplay muted loop alt="Projeto 3" class="project-image" style="max-height: 50%; margin-top: -5%; max-width: 50%; width: 40%;  height: 50%;" > </video>
+            <div class="project-description">
+              <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/dart-icon-511x512-jhyea1ft.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/flutter-logo-5086DD11C5-seeklogo.com.png" alt="linguagens" class="img-lang">
+              <img src="/static/imagens/lang/sqlite-icon-2048x909-7nkrc3bm.png" alt="linguagens" class="img-lang">
+
+              <h2>Aplicativo de musicas</h2>
+              <p>  <br>
+              confirara aqui: <br> 
+              
+            <a href="http://" target="_blank" >Link para o codigo no github</a></p>
+            </div>
+          </div>
+
+              <!-- Slide 6 -->
+              <div class="slide2">
+                <video src="/static/imagens/fotografia.mp4" autoplay muted loop alt="Projeto 3" class="project-image" style="max-height: 50%; margin-top: -5%; max-width: 50%; width: 40%;  height: 50%;" ></video>
+                <div class="project-description">
+                  <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/sql.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+      
+                  <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+      
+                  <h2>Site para fotografa</h2>
+                  <p>  <br>
+                  confirara aqui: <br> 
+                  
+                <a href="http://eduardasilvafotografia.com" target="_blank" >Link para o site</a></p>
+                </div>
+              </div>
+      </div>
+    </div>
+  
+    <!-- Botões de navegação -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+    
+  </section>
+  
+  <section>
+    <div class="bg" style="background-image: var(--image-portuguese-light3);"></div>
+    <h1>Nice, right?</h1>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <script>
+
+let currentSlide = 0;
+
+function moveSlide(direction) {
+  const slider = document.getElementById('slider2');
+  const slides = document.querySelectorAll('.slide2');
+  const totalSlides = slides.length;
+
+  currentSlide += direction;
+
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1; // Volta para o último slide
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0; // Vai para o primeiro slide
+  }
+
+  const slideWidth = slides[0].clientWidth;
+  slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+}
+
+
+
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      gsap.utils.toArray('.bg').forEach((section, i) => {
+        gsap.fromTo(section, 
+          { backgroundPosition: `50% ${-innerHeight / 2}px` },
+          {
+            backgroundPosition: `50% ${innerHeight / 2}px`,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: section,
+              scrub: true
+            }
+          }
+        );
+      });
+
+      gsap.utils.toArray('.animacao').forEach((heading) => {
+        gsap.fromTo(heading, { autoAlpha: 0 }, {
+          duration: 2,
+          autoAlpha: 1,
+          ease: 'power1.inOut',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        });
+      });
+
+      window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    });
+
+
+    const toggleSwitch = document.getElementById('checkbox');
+  const themeLabel = document.getElementById('theme-label');
+
+
+    const images = {
+  light: {
+    pt: [
+      'var(--image-portuguese-light1)',
+      'var(--image-portuguese-light2)',
+      'var(--image-portuguese-light3)',
+    ],
+    en: [
+      'var(--image-english-light1)',
+      'var(--image-english-light2)',
+      'var(--image-english-light3)',
+    ],
+  },
+  dark: {
+    pt: [
+      'var(--image-portuguese-dark1)',
+      'var(--image-portuguese-dark2)',
+      'var(--image-portuguese-dark3)',
+    ],
+    en: [
+      'var(--image-english-dark1)',
+      'var(--image-english-dark2)',
+      'var(--image-english-dark3)',
+    ],
+  },
+};
+
+let currentLanguage = 'pt'; // 'pt' ou 'en'
+let currentTheme = 'light'; // 'light' ou 'dark'
+
+function updateBackgroundImages() {
+  const sections = document.querySelectorAll('section .bg');
+  sections.forEach((section, index) => {
+    section.style.backgroundImage = images[currentTheme][currentLanguage][index];
+  });
+}
+function toggleLanguage() {
+  const enElements = document.querySelectorAll('.en');
+  const ptElements = document.querySelectorAll('.pt');
+
+  enElements.forEach(el => el.style.display = el.style.display === 'block' ? 'none' : 'block');
+  ptElements.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+
+  currentLanguage = currentLanguage === 'en' ? 'pt' : 'en';
+  updateBackgroundImages();
+
+  const bandeiraen = document.querySelectorAll('.toggle-en');
+  const bandeirapt = document.querySelectorAll('.toggle-pt');
+
+  bandeiraen.forEach(el => el.style.display = el.style.display === 'block' ? 'none' : 'block');
+  bandeirapt.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+
+  // Atualiza o texto do rótulo do tema
+  if (currentLanguage === 'en') {
+    themeLabel.textContent = toggleSwitch.checked ? 'Change to Light Theme' : 'Change to Dark Theme';
+  } else {
+    themeLabel.textContent = toggleSwitch.checked ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro';
+  }
+}
+
+
+toggleSwitch.addEventListener('change', function() {
+  currentTheme = this.checked ? 'dark' : 'light';
+  updateBackgroundImages();
+  document.body.classList.toggle('dark-theme');
+
+  if (currentLanguage === 'en') {
+    themeLabel.textContent = toggleSwitch.checked ? 'Change to Light Theme' : 'Change to Dark Theme';
+  } else {
+    themeLabel.textContent = toggleSwitch.checked ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro';
+  }
+
+});
+
+
+function changeColor(color) {
+  document.documentElement.style.setProperty('--itens-color', color);
+  // Adicione mais propriedades de estilo conforme necessário
+}
+
+     // Lógica para exibir e ocultar o modal
+     const modal = document.getElementById('settingsModal');
+    const settingsIcon = document.getElementById('settingsIcon');
+    const closeModal = document.querySelector('.close');
+
+    // Exibir o modal ao clicar no ícone de configurações
+    settingsIcon.onclick = function() {
+      modal.style.display = 'block';
+    }
+
+    // Fechar o modal ao clicar no botão de fechar
+    closeModal.onclick = function() {
+      modal.style.display = 'none';
+    }
+
+    // Fechar o modal ao clicar fora da área do modal
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    }
+
+ 
+  updateBackgroundImages();
+  </script>
+</body>
+</html>
