@@ -9,501 +9,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
   />
  
-  <style>
-
-
-/* Variáveis de cores para o tema claro */
-:root {
-  --primary-color: #ffffff;
-  --secondary-color: #282828;
-  --text-color: #000000;
-  --highlight-color: #007BFF;
-  --itens-color:  rgba(59, 0, 77, 0.808) ;
-
-   /* Variáveis de imagens de fundo */
-   --image-english-light1: url('/static/imagens/en_light_1.webp');
-      --image-english-light2: url('/static/imagens/en_light_2.webp');
-      --image-english-light3: url('/static/imagens/en_light_3.jpg');
-      --image-portuguese-light1: url('/static/imagens/pt_light_1.jpg');
-      --image-portuguese-light2: url('/static/imagens/pt_light_2.webp');
-      --image-portuguese-light3: url('/static/imagens/pt_light_3.jpg');
-      --image-english-dark1: url('/static/imagens/en_dark_1.webp');
-      --image-english-dark2: url('/static/imagens/en_dark_2.jpg');
-      --image-english-dark3: url('/static/imagens/en_dark_3.webp');
-      --image-portuguese-dark1: url('/static/imagens/pt_dark_1.webp');
-      --image-portuguese-dark2: url('/static/imagens/pt_dark_2.webp');
-      --image-portuguese-dark3: url('/static/imagens/pt_dark_3.webp');
-}
-
-/* Variáveis de cores para o tema escuro */
-.dark-theme {
-  --primary-color: #181818;
-  --secondary-color: #f0f0f0;
-  --text-color: #ffffff;
-  
-}
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      color: var(--text-color);
-    }
-
-    section {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      font-size: 2rem;
-    }
-
-    .bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: 50% 0;
-      z-index: -1;
-    }
-
-    h1 {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Imagem flutuante à direita */
-    .floating-section {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 200px;
-      top: 20%;
-      z-index: 2;
-    }
-
-    .floating-bust {
-      width: 250px;
-      height: auto;
-      margin-left: 150px; /* Ajustado para dar mais espaço */
-      border-radius: 150px;
-      background: var(--itens-color);/* Fundo translúcido para o efeito vidro */
-      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
-      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-      color: var(--text-color); /* Cor do texto */
-    }
-
-    /* Texto ao lado da imagem */
-    .floating-text {
-      max-width: 500px;
-      padding: 20px;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
-      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
-      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-      color: var(--text-color); /* Cor do texto */
-    }
-
-    .floating-text h2 {
-      font-size: 2.5rem; /* Tamanho maior para "Hi, I'm Igor" */
-      margin: 0;
-      color: var(--secondary-color);
-    }
-
-    .floating-text h3 {
-      font-size: 1.5rem; /* Tamanho menor para "Backend Developer" */
-      margin: 0;
-      color: var(--primary-color);
-    }
-
-    .floating-text p {
-      font-size: 1rem;
-      margin-top: 10px;
-      color: var(--text-color);
-      font-weight: bold;
-    }
-
-    .en {
-      display: none;
-    }
-
-    /* Animação de flutuação */
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-
-    /* Barra de navegação */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
-      transition: background-color 0.3s ease;
-      z-index: 1000;
-    }
-
-    .navbar.scrolled {
-      background-color: rgba(0, 0, 0, 0.6); /* Fica levemente escura ao rolar a página */
-    }
-
-    .navbar-icons {
-      display: flex;
-      gap: 20px;
-    }
-
-    .navbar-icons a {
-      color: wheat;
-      font-size: 24px;
-      text-decoration: none;
-    }
-
-    .navbar-icons a:hover {
-      color: #282828; /* Cor de hover */
-    }
-
-    .scroll_down {
-      font-size: 30px;
-      margin-left: 50%;
-      animation: float 3s ease-in-out infinite;
-      color: var(--primary-color);
-      background: var(--itens-color); /* Fundo translúcido para o efeito vidro */
-      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
-      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-border-radius: 20px;
-padding: 5px;
-    }
-
-
-.scroll-text {
-    color: var(--primary-color);
-    font-weight: bold;
-
-}
-  
-
-    .modal {
-      display: none; /* Oculto por padrão */
-      position: fixed;
-      z-index: 1001; /* Um nível acima do conteúdo */
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
-      padding: 30px;
-    }
-
-    .modal-content {
-      background-color: var(--primary-color);
-      margin: 15% auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 50%;
-      max-width: 600px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: black;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  margin-top: 5%;
-  margin-bottom: 2%;
-  
-}
-
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--primary-color);
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: var(--highlight-color);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-.color-picker {
-  display: flex;
-  gap: 10px; /* Espaçamento entre as bolinhas */
-}
-
-.color-circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%; /* Forma de círculo */
-  cursor: pointer;
-  border: 2px solid #000; /* Borda para destacar */
-}
-
-
-.bandeiara{
-  cursor: pointer;
-  
-}
-
-
-
-
- 
-.animacao {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-
-
-
-
-.slider-container {
-  position: relative;
-  width: 80%;
-  height: 70%;
-  
-  overflow: hidden;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
-      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
-      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-      color: var(--text-color); /* Cor do texto */
-
-}
-
-#slider2 {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-
-
-.slide2 {
-  min-width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  
-  padding: 20px;
-  margin-top: -15%;
-  
-}
-
-
-
-
-
-.project-image {
-  max-width: 50%;
-  object-fit: contain;
-  
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.project-description {
-  width: 50%;
-  padding-left: 20px;
-}
-.img-lang {
-  width: 10%;
-  
-}
-
-.project-description h2 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.project-description p {
-  font-size: 18px;
-  
-}
-
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-
-@media (max-width: 768px) {
-
-
-  .floating-section {
-    left: 20px;
-    right: 20px;
-      top: 10%;
-      flex-direction: column;
-
-  }
-
-
-  .floating-text {
-      max-width: 500px;
-      padding: 20px;
-      border-radius: 15px;
-    }
-
-    .floating-text h2 {
-      font-size: 1.5rem; /* Tamanho maior para "Hi, I'm Igor" */
-      margin: 0;
-      
-    }
-
-    .floating-text h3 {
-      font-size: 1rem; /* Tamanho menor para "Backend Developer" */
-      margin: 0;
-      
-    }
-
-    .floating-text p {
-      font-size: 0.8rem;
-      margin-top: 10px;
-      
-      
-    }
-    .floating-bust {
-      width: 150px;
-      height: auto;
-      margin-top: 15px; /* Ajustado para dar mais espaço */
-      border-radius: 150px;
-      
-    }
-
-
-
-  .slider-container {
-    width: 90%;
-    height: 90%;
-  }
-
-
-  .slide2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .img-lang {
-    
-    width: 7%; /* A imagem ocupará toda a largura disponível */
-    height: auto; /* Mantém a proporção da imagem */
-  }
-
-  .project-description {
-    width: 100%;
-    padding-left: 0;
-    margin: auto;
-    align-items: center;
-    padding: auto;
-    
-  }
-
-  .project-description h2 {
-    font-size: 18px;
-  }
-
-  .project-description p {
-    font-size: 13px;
-    width: 50%;
-    
-    margin-left: 25%;
-  }
-
-  .project-image {
-    width: 100%;
-    height: auto;
-    
-  }
-}
-  </style>
+<link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
 
@@ -593,7 +99,7 @@ input:checked + .slider:before {
       </div>
 
       <div>
-        <img src="/static/imagens/102704465.png" alt="Seu busto" class="floating-bust en">
+        <img src="/static/imagens/fundo/102704465.png" alt="Seu busto" class="floating-bust en">
         <h3 class="scroll_down en">
           <span class="scroll-text">Scroll down</span>
           <i class="fas fa-arrow-down"></i>
@@ -617,7 +123,7 @@ input:checked + .slider:before {
       </div>
 
       <div>
-        <img src="/static/imagens/102704465.png" alt="Seu busto" class="floating-bust pt">
+        <img src="/static/imagens/fundo/102704465.png" alt="Seu busto" class="floating-bust pt">
         <h3 class="scroll_down pt">
           <span class="scroll-text">Role para baixo</span>
           <i class="fas fa-arrow-down"></i>
@@ -643,8 +149,15 @@ input:checked + .slider:before {
           <img src="/static/imagens/canal-youtube.png" alt="Projeto 1" class="project-image">
           <div class="project-description">
             <img src="/static/imagens/lang/Youtube_logo.png" alt="linguagens" class="img-lang">
-            <h2>Canal no youtube</h2>
-            <p>Um dos meus maiores projetos foi ter criado um canal no youtube para ensinar um pouco de programação, ja se inscreve la para acompanhar. <br> <a href="http://youtube.com/igorkeven" target="_blank">Click aqui e confira.</a></p>
+            <h2 class="pt">Canal no youtube</h2>
+            <p class="pt">Um dos meus maiores projetos foi ter criado um canal no youtube para ensinar um pouco de programação, ja se inscreve la para acompanhar. <br> <a href="http://youtube.com/igorkeven" target="_blank">Click aqui e confira.</a></p>
+
+
+            <h2 class="en">YouTube Channel</h2>
+            <p class="en">One of my biggest projects was creating a YouTube channel to teach a bit of programming. Subscribe now to follow along! <br>
+              <a href="http://youtube.com/igorkeven" target="_blank">Click here to check it out.</a>
+            </p>
+          
           </div>
         </div>
         <!-- Slide 2 -->
@@ -660,10 +173,20 @@ input:checked + .slider:before {
             
 
             <h2>E-commerce</h2>
-            <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+            <p class="pt">desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
             <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
             <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+
+            
+            <p class="en">I developed this E-commerce to teach the entire CRUD (Create, Read, Update, Delete) process and some additional features on my channel. It was built using Python, HTML, CSS, and a lot of JavaScript, with Flask as the Python web framework. <br>
+              <a href="http://" target="_blank">Link to the channel playlist</a> <br>
+              <a href="http://" target="_blank">Link to the code on GitHub</a>
+            </p>
+
+
           </div>
+
+
         </div>
         <!-- Slide 3 -->
         <div class="slide2">
@@ -678,11 +201,19 @@ input:checked + .slider:before {
 
             <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
 
-            <h2>Rede Social</h2>
-            <p>Desenvolvi essa rede social para ensinar no canal, contendo todas as funcionalidades, envio de texto, foto e video , um sistema de login seguro e simples, menssagens, amigos e muito mais... <br>
+            <h2 class="pt">Rede Social</h2>
+            <p class="pt">Desenvolvi essa rede social para ensinar no canal, contendo todas as funcionalidades, envio de texto, foto e video , um sistema de login seguro e simples, menssagens, amigos e muito mais... <br>
             confirara aqui: <br> 
             <a href="http://"target="_blank">Link para a playlist do canal</a> <br> <br>
           <a href="http://"target="_blank">Link para o codigo no github</a></p>
+
+
+          <h2 class="en">Social Network</h2>
+    <p class="en">I developed this social network to teach on my channel. It includes all features like text, photo, and video sharing, a secure and simple login system, messaging, friends, and much more... <br>
+      Check it out here: <br>
+      <a href="http://" target="_blank">Link to the channel playlist</a> <br> <br>
+      <a href="http://" target="_blank">Link to the code on GitHub</a>
+    </p>
           </div>
         </div>
           <!-- Slide 4 -->
@@ -698,11 +229,18 @@ input:checked + .slider:before {
 
 
 
-              <h2>Aplicativo para a Rede Social</h2>
-              <p> Desenvolvi esse aplicativo com Flutter para interagir com a rede social "Social Connect" que mostrei no slide anterior, tanto o site quanto o app funcionan em paralelo , podendo assim o usuario escolher qual melhor experiência deseja. <br>
+              <h2 class="pt">Aplicativo para a Rede Social</h2>
+              <p class="pt"> Desenvolvi esse aplicativo com Flutter para interagir com a rede social "Social Connect" que mostrei no slide anterior, tanto o site quanto o app funcionan em paralelo , podendo assim o usuario escolher qual melhor experiência deseja. <br>
               confirara aqui: <br>  
               
             <a href="http://"target="_blank">Link para o codigo no github</a></p>
+
+
+            <h2 class="en">Social Network App</h2>
+            <p class="en">I developed this app with Flutter to interact with the "Social Connect" network showcased in the previous slide. Both the website and app work in parallel, allowing users to choose their preferred experience. <br>
+              Check it out here: <br>
+              <a href="http://" target="_blank">Link to the code on GitHub</a>
+            </p>
             </div>
           </div>
            <!-- Slide 5 -->
@@ -714,11 +252,17 @@ input:checked + .slider:before {
               <img src="/static/imagens/lang/flutter-logo-5086DD11C5-seeklogo.com.png" alt="linguagens" class="img-lang">
               <img src="/static/imagens/lang/sqlite-icon-2048x909-7nkrc3bm.png" alt="linguagens" class="img-lang">
 
-              <h2>Aplicativo de musicas</h2>
-              <p>  <br>
+              <h2 class="pt">Aplicativo de musicas</h2>
+              <p class="pt">  <br>
               confirara aqui: <br> 
               
             <a href="http://" target="_blank" >Link para o codigo no github</a></p>
+
+            <h2 class="en">Music App</h2>
+            <p class="en"> <br>
+              Check it out here: <br>
+              <a href="http://" target="_blank">Link to the code on GitHub</a>
+            </p>
             </div>
           </div>
 
@@ -734,13 +278,117 @@ input:checked + .slider:before {
       
                   <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
       
-                  <h2>Site para fotografa</h2>
-                  <p>  <br>
+                  <h2 class="pt">Site para fotógrafa</h2>
+                  <p class="pt">  <br>
                   confirara aqui: <br> 
                   
                 <a href="http://eduardasilvafotografia.com" target="_blank" >Link para o site</a></p>
+
+                <h2 class="en">Photographer's Website</h2>
+    <p class="en"> <br>
+      Check it out here: <br>
+      <a href="http://eduardasilvafotografia.com" target="_blank">Link to the website</a>
+    </p>
                 </div>
               </div>
+
+              <!-- Slide 7 -->
+
+                <!-- <div class="slide2">
+                  <img src="/static/imagens/senhor-dos-aneis-java.png" alt="Projeto 2" class="project-image">
+                  <div class="project-description">
+                    <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+                    <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+                    <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+                    <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+        
+                    <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+                    
+        
+                    <h2>E-commerce</h2>
+                    <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+                    <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
+                    <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+                  </div>
+                </div> -->
+
+              <!-- Slide 8 -->
+
+              <!-- <div class="slide2">
+                <img src="/static/imagens/batalha-ninja.png" alt="Projeto 2" class="project-image">
+                <div class="project-description">
+                  <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+      
+                  <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+                  
+      
+                  <h2>E-commerce</h2>
+                  <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+                  <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
+                  <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+                </div>
+              </div> -->
+
+              <!-- Slide 8 -->
+
+              <!-- <div class="slide2">
+                <img src="/static/imagens/army-manager.png" alt="Projeto 2" class="project-image">
+                <div class="project-description">
+                  <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+      
+                  <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+                  
+      
+                  <h2>E-commerce</h2>
+                  <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+                  <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
+                  <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+                </div>
+              </div> -->
+
+              <!-- Slide 9 -->
+
+              <!-- <div class="slide2">
+                <img src="/static/imagens/calculadora-java.png" alt="Projeto 2" class="project-image">
+                <div class="project-description">
+                  <img src="/static/imagens/lang/html.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/css-logo.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/js2.png" alt="linguagens" class="img-lang">
+                  <img src="/static/imagens/lang/Python-logo-notext.svg.png" alt="linguagens" class="img-lang">
+      
+                  <img src="/static/imagens/lang/Flask_logo.svg.png" alt="linguagens" class="img-lang">
+                  
+      
+                  <h2>E-commerce</h2>
+                  <p>desenvolvi esse E-commerce para ensinar todo o crud (Create, Read, Update, Delete) e mais algumas funcionalidades no canal, todo desenvolvido com python, html, css e muito javascript, utilizei o Flask como framework do python para web. <br>
+                  <a href="http://"target="_blank">Link para a playlist do canal</a> <br>
+                  <a href="http://"target="_blank">Link para o codigo no github</a> </p>
+                </div>
+              </div> -->
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+
+             
       </div>
     </div>
   
@@ -753,189 +401,13 @@ input:checked + .slider:before {
   
   <section>
     <div class="bg" style="background-image: var(--image-portuguese-light3);"></div>
-    <h1>Nice, right?</h1>
+   
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <script src="/static/javascript/index.js"></script>
   <script>
-
-let currentSlide = 0;
-
-function moveSlide(direction) {
-  const slider = document.getElementById('slider2');
-  const slides = document.querySelectorAll('.slide2');
-  const totalSlides = slides.length;
-
-  currentSlide += direction;
-
-  if (currentSlide < 0) {
-    currentSlide = totalSlides - 1; // Volta para o último slide
-  } else if (currentSlide >= totalSlides) {
-    currentSlide = 0; // Vai para o primeiro slide
-  }
-
-  const slideWidth = slides[0].clientWidth;
-  slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
-}
-
-
-
-
-
-
-
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      gsap.registerPlugin(ScrollTrigger);
-      
-      gsap.utils.toArray('.bg').forEach((section, i) => {
-        gsap.fromTo(section, 
-          { backgroundPosition: `50% ${-innerHeight / 2}px` },
-          {
-            backgroundPosition: `50% ${innerHeight / 2}px`,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: section,
-              scrub: true
-            }
-          }
-        );
-      });
-
-      gsap.utils.toArray('.animacao').forEach((heading) => {
-        gsap.fromTo(heading, { autoAlpha: 0 }, {
-          duration: 2,
-          autoAlpha: 1,
-          ease: 'power1.inOut',
-          scrollTrigger: {
-            trigger: heading,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        });
-      });
-
-      window.addEventListener('scroll', function () {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-      });
-    });
-
-
-    const toggleSwitch = document.getElementById('checkbox');
-  const themeLabel = document.getElementById('theme-label');
-
-
-    const images = {
-  light: {
-    pt: [
-      'var(--image-portuguese-light1)',
-      'var(--image-portuguese-light2)',
-      'var(--image-portuguese-light3)',
-    ],
-    en: [
-      'var(--image-english-light1)',
-      'var(--image-english-light2)',
-      'var(--image-english-light3)',
-    ],
-  },
-  dark: {
-    pt: [
-      'var(--image-portuguese-dark1)',
-      'var(--image-portuguese-dark2)',
-      'var(--image-portuguese-dark3)',
-    ],
-    en: [
-      'var(--image-english-dark1)',
-      'var(--image-english-dark2)',
-      'var(--image-english-dark3)',
-    ],
-  },
-};
-
-let currentLanguage = 'pt'; // 'pt' ou 'en'
-let currentTheme = 'light'; // 'light' ou 'dark'
-
-function updateBackgroundImages() {
-  const sections = document.querySelectorAll('section .bg');
-  sections.forEach((section, index) => {
-    section.style.backgroundImage = images[currentTheme][currentLanguage][index];
-  });
-}
-function toggleLanguage() {
-  const enElements = document.querySelectorAll('.en');
-  const ptElements = document.querySelectorAll('.pt');
-
-  enElements.forEach(el => el.style.display = el.style.display === 'block' ? 'none' : 'block');
-  ptElements.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-
-  currentLanguage = currentLanguage === 'en' ? 'pt' : 'en';
-  updateBackgroundImages();
-
-  const bandeiraen = document.querySelectorAll('.toggle-en');
-  const bandeirapt = document.querySelectorAll('.toggle-pt');
-
-  bandeiraen.forEach(el => el.style.display = el.style.display === 'block' ? 'none' : 'block');
-  bandeirapt.forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-
-  // Atualiza o texto do rótulo do tema
-  if (currentLanguage === 'en') {
-    themeLabel.textContent = toggleSwitch.checked ? 'Change to Light Theme' : 'Change to Dark Theme';
-  } else {
-    themeLabel.textContent = toggleSwitch.checked ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro';
-  }
-}
-
-
-toggleSwitch.addEventListener('change', function() {
-  currentTheme = this.checked ? 'dark' : 'light';
-  updateBackgroundImages();
-  document.body.classList.toggle('dark-theme');
-
-  if (currentLanguage === 'en') {
-    themeLabel.textContent = toggleSwitch.checked ? 'Change to Light Theme' : 'Change to Dark Theme';
-  } else {
-    themeLabel.textContent = toggleSwitch.checked ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro';
-  }
-
-});
-
-
-function changeColor(color) {
-  document.documentElement.style.setProperty('--itens-color', color);
-  // Adicione mais propriedades de estilo conforme necessário
-}
-
-     // Lógica para exibir e ocultar o modal
-     const modal = document.getElementById('settingsModal');
-    const settingsIcon = document.getElementById('settingsIcon');
-    const closeModal = document.querySelector('.close');
-
-    // Exibir o modal ao clicar no ícone de configurações
-    settingsIcon.onclick = function() {
-      modal.style.display = 'block';
-    }
-
-    // Fechar o modal ao clicar no botão de fechar
-    closeModal.onclick = function() {
-      modal.style.display = 'none';
-    }
-
-    // Fechar o modal ao clicar fora da área do modal
-    window.onclick = function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    }
-
- 
-  updateBackgroundImages();
   </script>
 </body>
 </html>

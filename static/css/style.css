@@ -1,0 +1,495 @@
+
+
+
+/* Variáveis de cores para o tema claro */
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #282828;
+  --text-color: #000000;
+  --highlight-color: #007BFF;
+  --itens-color:  rgba(59, 0, 77, 0.808) ;
+
+   /* Variáveis de imagens de fundo */
+   --image-english-light1: url('/static/imagens/fundo/en_light_1.webp');
+      --image-english-light2: url('/static/imagens/fundo/en_light_2.webp');
+      --image-english-light3: url('/static/imagens/fundo/en_light_3.jpg');
+      --image-portuguese-light1: url('/static/imagens/fundo/pt_light_1.jpg');
+      --image-portuguese-light2: url('/static/imagens/fundo/pt_light_2.webp');
+      --image-portuguese-light3: url('/static/imagens/fundo/pt_light_3.jpg');
+      --image-english-dark1: url('/static/imagens/fundo/en_dark_1.webp');
+      --image-english-dark2: url('/static/imagens/fundo/en_dark_2.jpg');
+      --image-english-dark3: url('/static/imagens/fundo/en_dark_3.webp');
+      --image-portuguese-dark1: url('/static/imagens/fundo/pt_dark_1.webp');
+      --image-portuguese-dark2: url('/static/imagens/fundo/pt_dark_2.webp');
+      --image-portuguese-dark3: url('/static/imagens/fundo/pt_dark_3.webp');
+}
+
+/* Variáveis de cores para o tema escuro */
+.dark-theme {
+  --primary-color: #181818;
+  --secondary-color: #f0f0f0;
+  --text-color: #ffffff;
+  
+}
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      color: var(--text-color);
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: 50% 0;
+      z-index: -1;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Imagem flutuante à direita */
+    .floating-section {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 200px;
+      top: 20%;
+      z-index: 2;
+    }
+
+    .floating-bust {
+      width: 250px;
+      height: auto;
+      margin-left: 150px; /* Ajustado para dar mais espaço */
+      border-radius: 150px;
+      background: var(--itens-color);/* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+    }
+
+    /* Texto ao lado da imagem */
+    .floating-text {
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+    }
+
+    .floating-text h2 {
+      font-size: 2.5rem; /* Tamanho maior para "Hi, I'm Igor" */
+      margin: 0;
+      color: var(--secondary-color);
+    }
+
+    .floating-text h3 {
+      font-size: 1.5rem; /* Tamanho menor para "Backend Developer" */
+      margin: 0;
+      color: var(--primary-color);
+    }
+
+    .floating-text p {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+
+    .en {
+      display: none;
+    }
+
+    /* Animação de flutuação */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Barra de navegação */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    .navbar.scrolled {
+      background-color: rgba(0, 0, 0, 0.6); /* Fica levemente escura ao rolar a página */
+    }
+
+    .navbar-icons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-icons a {
+      color: wheat;
+      font-size: 24px;
+      text-decoration: none;
+    }
+
+    .navbar-icons a:hover {
+      color: #282828; /* Cor de hover */
+    }
+
+    .scroll_down {
+      font-size: 30px;
+      margin-left: 50%;
+      animation: float 3s ease-in-out infinite;
+      color: var(--primary-color);
+      background: var(--itens-color); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+border-radius: 20px;
+padding: 5px;
+    }
+
+
+.scroll-text {
+    color: var(--primary-color);
+    font-weight: bold;
+
+}
+  
+
+    .modal {
+      display: none; /* Oculto por padrão */
+      position: fixed;
+      z-index: 1001; /* Um nível acima do conteúdo */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      padding: 30px;
+    }
+
+    .modal-content {
+      background-color: var(--primary-color);
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 50%;
+      max-width: 600px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--primary-color);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--highlight-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.color-picker {
+  display: flex;
+  gap: 10px; /* Espaçamento entre as bolinhas */
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; /* Forma de círculo */
+  cursor: pointer;
+  border: 2px solid #000; /* Borda para destacar */
+}
+
+
+.bandeiara{
+  cursor: pointer;
+  
+}
+
+
+
+
+ 
+.animacao {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+
+.slider-container {
+  position: relative;
+  width: 80%;
+  height: 70%;
+  
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2); /* Fundo translúcido para o efeito vidro */
+      backdrop-filter: blur(10px); /* Desfoque do efeito de vidro */
+      -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+      color: var(--text-color); /* Cor do texto */
+
+}
+
+#slider2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+
+.slide2 {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  
+  padding: 20px;
+  margin-top: -15%;
+  
+}
+
+
+
+
+
+.project-image {
+  max-width: 50%;
+  object-fit: contain;
+  
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-description {
+  width: 50%;
+  padding-left: 20px;
+}
+.img-lang {
+  width: 10%;
+  
+}
+
+.project-description h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.project-description p {
+  font-size: 18px;
+  
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+@media (max-width: 768px) {
+
+
+  .floating-section {
+    left: 20px;
+    right: 20px;
+      top: 10%;
+      flex-direction: column;
+
+  }
+
+
+  .floating-text {
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .floating-text h2 {
+      font-size: 1.5rem; /* Tamanho maior para "Hi, I'm Igor" */
+      margin: 0;
+      
+    }
+
+    .floating-text h3 {
+      font-size: 1rem; /* Tamanho menor para "Backend Developer" */
+      margin: 0;
+      
+    }
+
+    .floating-text p {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      
+      
+    }
+    .floating-bust {
+      width: 150px;
+      height: auto;
+      margin-top: 15px; /* Ajustado para dar mais espaço */
+      border-radius: 150px;
+      
+    }
+
+
+
+  .slider-container {
+    width: 90%;
+    height: 90%;
+  }
+
+
+  .slide2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .img-lang {
+    
+    width: 7%; /* A imagem ocupará toda a largura disponível */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+
+  .project-description {
+    width: 100%;
+    padding-left: 0;
+    margin: auto;
+    align-items: center;
+    padding: auto;
+    
+  }
+
+  .project-description h2 {
+    font-size: 18px;
+  }
+
+  .project-description p {
+    font-size: 13px;
+    width: 50%;
+    
+    margin-left: 25%;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+    
+  }
+}
+  
