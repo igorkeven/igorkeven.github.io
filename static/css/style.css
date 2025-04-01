@@ -325,14 +325,14 @@ input:checked + .slider:before {
 
 }
 
-#slider2 {
+#slider2 , #slider22 {
   display: flex;
   transition: transform 0.5s ease-in-out;
 }
 
 
 
-.slide2 {
+.slide2 , .slide22 {
   min-width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -451,7 +451,7 @@ input:checked + .slider:before {
   }
 
 
-  .slide2 {
+  .slide2 , .slide22 {
     display: flex;
     flex-direction: column;
     align-items: center;

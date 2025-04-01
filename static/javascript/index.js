@@ -1,5 +1,6 @@
 
 let currentSlide = 0;
+let currentSlide2 = 0;
 
 function moveSlide(direction) {
   const slider = document.getElementById('slider2');
@@ -19,6 +20,22 @@ function moveSlide(direction) {
 }
 
 
+function moveSlide2(direction) {
+  const slider = document.getElementById('slider22');
+  const slides = document.querySelectorAll('.slide22');
+  const totalSlides = slides.length;
+
+  currentSlide2 += direction;
+
+  if (currentSlide2 < 0) {
+    currentSlide2 = totalSlides - 1; // Volta para o último slide
+  } else if (currentSlide2 >= totalSlides) {
+    currentSlide2 = 0; // Vai para o primeiro slide
+  }
+
+  const slideWidth = slides[0].clientWidth;
+  slider.style.transform = `translateX(${-currentSlide2 * slideWidth}px)`;
+}
 
 
 
